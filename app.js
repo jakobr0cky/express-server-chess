@@ -2,10 +2,12 @@ const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
     cors: {
-      origin: "https://jakobr0cky.github.io/",
+      origin: "http://localhost:4200",
       methods: ["GET", "POST"]
     }
   });
+
+const port = process.env.PORT | 4444;
 
 io.on("connection", socket => {
     console.log(`Socket ${socket.id} connected to server socket`);
@@ -32,6 +34,6 @@ io.on("connection", socket => {
     });
 });
 
-http.listen(4444, () => {
-    console.log('Listening on port 4444');
+http.listen(port, () => {
+    console.log('Listening on port: '+port);
 });
