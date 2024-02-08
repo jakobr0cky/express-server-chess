@@ -1,11 +1,15 @@
-const app = require('express')();
-const http = require('http').createServer(app);
+// const app = require('express')();
+const http = require('http').createServer();
 const io = require('socket.io')(http, {
     cors: {
       origin: "http://localhost:4200",
       methods: ["GET", "POST"]
     }
   });
+
+http.on('connection',() => {
+    console.log('connected');
+})
 
 const port = process.env.PORT | 4444;
 
