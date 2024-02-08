@@ -11,7 +11,7 @@ http.on('connection',() => {
     console.log('connected');
 })
 
-const port = process.env.PORT | 4444;
+const port = process.env.PORT | 8080;
 
 io.on("connection", socket => {
     console.log(`Socket ${socket.id} connected to server socket`);
