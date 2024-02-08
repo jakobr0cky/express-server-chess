@@ -2,7 +2,7 @@ const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http, {
     cors: {
-      origin: "https://jakobr0cky.github.io/angular-silentchess/",
+      origin: "https://jakobr0cky.github.io/",
       methods: ["GET", "POST"]
     }
   });
